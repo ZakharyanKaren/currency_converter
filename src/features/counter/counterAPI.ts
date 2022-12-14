@@ -1,4 +1,4 @@
-const apiKey = "0GUoZ0KerzA40u8qwz5aFdHxD2ZpWGnA";
+const apiKey = "fjPEAe04IIRd4fQNbrC3wrbO5KQGZuwU";
 let myHeaders = new Headers();
 myHeaders.append("apikey", apiKey);
 

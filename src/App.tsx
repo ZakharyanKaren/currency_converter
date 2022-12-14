@@ -1,7 +1,17 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import "./App.css";
+import { AppDispatch } from "./app/store";
+import { requestRateAsync } from "./features/counter/counterSlice";
 
 function App() {
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    dispatch(requestRateAsync());
+  }, []);
+
   return (
     <div className="App">
       <div className="navbarWrapper">

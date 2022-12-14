@@ -1,0 +1,20 @@
+.exchangeRatesWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 50%;
+    background-color: #fbff00;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 140px;
+
+    .rates {
+        width: 25%;
+        margin: 0 auto;
+    }
+
+    .ratesField {
+        display: flex;
+        justify-content: space-between;
+    }
+}

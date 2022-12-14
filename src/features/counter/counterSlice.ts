@@ -1,11 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
+import { RatesType } from "../../types/types";
 import { getCurrency } from "./counterAPI";
 
 export interface CounterState {
-  rates: {
-    [key: string]: number;
-  };
+  rates: RatesType;
   status: "idle" | "loading" | "failed";
 }
 
@@ -57,7 +56,7 @@ export const exchangeSlice = createSlice({
         state.status = "idle";
         const rates: { [key: string]: number } = action.payload.rates;
         for (const [key, value] of Object.entries(rates)) {
-          state.rates[key] = Math.floor((1 / value) * 10000) / 10000;
+          state.rates[key] = Math.floor((1 / value) * 100) / 100;
         }
       })
       .addCase(requestRateAsync.rejected, (state) => {
